@@ -25,6 +25,10 @@ class Library
     self.games = games
   end
 
+  def insert_game(game)
+    self.games << game
+  end
+
   def has_game?(search_game)
     for game in games
       return true if game == search_game
@@ -42,3 +46,5 @@ games = [g1,g2,g3]
 library = Library.new(games)
 puts library.has_game?(g4)
 puts library.has_game?(g2)
+library.insert_game(g4)
+puts library.has_game?(g4)
